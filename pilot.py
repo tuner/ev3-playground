@@ -1,9 +1,16 @@
+
+# Author: Kari Lavikka
+
 import math
 from ev3dev.ev3 import *
 from time import sleep
 
 
 class Pilot(object):
+    """
+    Pilot is a high-level steering abstraction for a two-wheeled robot.
+    This is inspired by the leJOS DiffrerentialPilot class. 
+    """
 
     def __init__(self, wheel_diameter, track_width, motor_left, motor_right):
         self.motors = [motor_left, motor_right]

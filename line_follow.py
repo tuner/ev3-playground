@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Author: Kari Lavikka
+
 from ev3dev.ev3 import *
 from time import sleep
 from pilot import Pilot

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# Author: Kari Lavikka
 
 import math
 from ev3dev.ev3 import *
