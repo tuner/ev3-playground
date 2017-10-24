@@ -30,6 +30,9 @@ class Pilot(object):
         return (self._current_offset() - self.offset_start) / self.distance_angle_ratio
     
 
+    def get_rotation_difference(self):
+        pass
+
     def _wait_motors(self):
         for m in self.motors:
             m.wait_while("running")
@@ -45,11 +48,11 @@ class Pilot(object):
     
 
     def travel_indefinitely(self, forward=True):
-        self.offset_start = self._current_offset()
+        #self.offset_start = self._current_offset()
 
         speeds = self._get_curved_speed()
         for i, m in enumerate(self.motors):
-            m.run_forever(speed_sp=speeds[i])
+            m.run_forever(speed_sp=speeds[i] * (1 if forward else -1))
 
 
     def _get_curved_speed(self):
